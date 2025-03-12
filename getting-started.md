@@ -52,8 +52,8 @@ ChemXploreML supports multiple molecular embeddings:
 
 ## What's Next?
 
-- [Detailed User Guides](./user-guides)
+<!-- - [Detailed User Guides](./user-guides)
 - [Advanced Configuration](./advanced-config)
-- [FAQs](./faqs)
+- [FAQs](./faqs) -->
 
 Enjoy exploring your molecular datasets with ChemXploreML!
