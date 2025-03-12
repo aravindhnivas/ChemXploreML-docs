@@ -1,2 +1,2 @@
-# ChemXploreML-docs
- ChemXploreML-docs
+# ChemXploreML
+ ChemXploreML
