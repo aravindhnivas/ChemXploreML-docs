@@ -10,9 +10,9 @@ hero:
     - theme: brand
       text: Get Started
       link: /getting-started
-    - theme: alt
-      text: View on GitHub
-      link: /markdown-examples
+    # - theme: alt
+    #   text: View on GitHub
+    #   link: /markdown-examples
 
 features:
   - title: Data preprocessing
