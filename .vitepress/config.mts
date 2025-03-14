@@ -23,6 +23,10 @@ export default defineConfig({
 
     socialLinks: [{ icon: "github", link: "https://github.com/aravindhnivas/chemxploreml/" }],
     logo: "/logo1.png",
+    search: {
+      provider: "local",
+    },
   },
+
   base: "/ChemXploreML-docs/",
 });
