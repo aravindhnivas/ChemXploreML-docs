@@ -14,7 +14,7 @@ hero:
     #   text: View on GitHub
     #   link: /markdown-examples
   image:
-    src: /logo1.jpg
+    src: /logo1.png
     alt: ChemXploreML logo
 
 features:
