@@ -9,5 +9,8 @@
 	},
 	"devDependencies": {
 		"vitepress": "^1.6.3"
+	},
+	"dependencies": {
+		"lucide-static": "^0.511.0"
 	}
 }

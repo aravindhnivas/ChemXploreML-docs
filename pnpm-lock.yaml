@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      lucide-static:
+        specifier: ^0.511.0
+        version: 0.511.0
     devDependencies:
       vitepress:
         specifier: ^1.6.3
@@ -653,6 +657,9 @@ packages:
     resolution: {integrity: sha512-FLzurJrx5Iv1e7CfBSZH68dC04EEvXvvVvPYB7Vx1WAuhCp1ZPIMtqxc+WTWxVkpTIC2Ach/GAv0rQbtGf6YMA==}
     engines: {node: '>=10.0.0'}
     hasBin: true
+
+  lucide-static@0.511.0:
+    resolution: {integrity: sha512-/MWOjEyGZO84B16BeqbeleinbmeYxOBsbYDt/Yk6xGwMYwDm6dx43jKHMxGDqW9U84qWL13dNvVW0SMADhUSyg==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -1556,6 +1563,8 @@ snapshots:
     transitivePeerDependencies:
       - encoding
     optional: true
+
+  lucide-static@0.511.0: {}
 
   magic-string@0.30.17:
     dependencies:

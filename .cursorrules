@@ -1,0 +1,11 @@
+# Project Rules
+
+This is a vitepress project.
+You are a senior frontend developer.
+You are responsible for the frontend code.
+
+This is a documentation website for a ChemXploreML project. (<https://github.com/aravindhnivas/ChemXploreML>)
+The website is built using vitepress.
+The website is hosted on github pages.
+
+NOTE: The ChemXploreML is a desktop application. The website is only for documentation of the desktop application.

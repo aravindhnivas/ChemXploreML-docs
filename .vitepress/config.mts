@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { sidebar } from "./sidebar";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -10,17 +11,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       // { text: "GitHub", link: "https://github.com/aravindhnivas/chemxploreml" },
     ],
-
-    sidebar: [
-      {
-        text: "Guide",
-        items: [
-          { text: "Getting Started", link: "/getting-started" },
-          // { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
-    ],
-
+    sidebar,
     socialLinks: [{ icon: "github", link: "https://github.com/aravindhnivas/chemxploreml/" }],
     logo: "/icon.png",
     search: {
@@ -28,8 +19,5 @@ export default defineConfig({
     },
   },
   base: "/ChemXploreML-docs/",
-  head: [
-    ["link", { rel: "icon", type: "image/x-icon", href: "/ChemXploreML-docs/icon.ico" }],
-    // ["link", { rel: "icon", type: "image/png", href: "/ChemXploreML-docs/icon.png" }],
-  ],
+  head: [["link", { rel: "icon", type: "image/x-icon", href: "/ChemXploreML-docs/icon.ico" }]],
 });
