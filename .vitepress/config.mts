@@ -2,8 +2,8 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "ChemXploreML",
-  description: "A documentaion site for ChemXploreML application",
+  title: "CXML - ChemXploreML",
+  description: "A documentation site for ChemXploreML application",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -22,11 +22,14 @@ export default defineConfig({
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/aravindhnivas/chemxploreml/" }],
-    logo: "/logo1.png",
+    logo: "/icon.png",
     search: {
       provider: "local",
     },
   },
-
   base: "/ChemXploreML-docs/",
+  head: [
+    ["link", { rel: "icon", type: "image/x-icon", href: "/ChemXploreML-docs/icon.ico" }],
+    // ["link", { rel: "icon", type: "image/png", href: "/ChemXploreML-docs/icon.png" }],
+  ],
 });

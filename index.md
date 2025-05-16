@@ -5,20 +5,17 @@ layout: home
 hero:
   name: "ChemXploreML"
   text: "ML for Chemistry"
-  tagline: A general purpose machine-learning desktop application for chemistry
+  tagline: A general purpose machine-learning desktop application for molecular property prediction
   actions:
     - theme: brand
       text: Get Started
       link: /getting-started
-    # - theme: alt
-    #   text: GitHub
-    #   link: https://github.com/aravindhnivas/chemxploreml
     - theme: alt
       text: Download latest Release
       link: https://github.com/aravindhnivas/chemxploreml/releases/latest
 
   image:
-    src: /logo1.png
+    src: /icon.png
     alt: ChemXploreML logo
 
 features:

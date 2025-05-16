@@ -4,9 +4,9 @@ Welcome to the ChemXploreML documentation! ChemXploreML is a modular desktop app
 
 ## Download and Installation
 
-ChemXploreML is available as a downloadable application for macOS and Windows OS:
+ChemXploreML is available as a downloadable application for macOS (Intel and Apple Silicon), Windows (64-bit) and Linux (64-bit, .deb, .rpm and .AppImage):
 
-- [Download ChemXploreML](https://github.com/aravindhnivas/ChemXploreML/releases)
+- [Click here to download latest release of ChemXploreML](https://github.com/aravindhnivas/ChemXploreML/releases)
 
 ### Initial Setup
 
@@ -15,10 +15,13 @@ ChemXploreML is available as a downloadable application for macOS and Windows OS
 3. Run the ChemXploreML executable:
    - On macOS, open the `.dmg` file and drag ChemXploreML into your `Applications` folder.
    - On Windows, run the installer (`.exe`) and follow the installation instructions.
+   - On Linux, first make the `.AppImage` file executable and then run it.
 
-ChemXploreML has no additional prerequisites for installation, simplifying setup.
-
-> **Note:** The first time you run ChemXploreML, the application will automatically perform initial setup and download required resources.
+```bash
+# On Linux
+chmod +x ChemXploreML-*.AppImage
+./ChemXploreML-*.AppImage
+```
 
 ## Quick Start Guide
 
@@ -27,33 +30,37 @@ ChemXploreML provides an intuitive user interface for data preparation, molecula
 ### 1. Load Your Data
 
 - Launch ChemXploreML.
-- Go to **File > Open Dataset**.
-- Supported file formats include CSV, JSON, and HDF5.
+- Go to **LOAD FILE** tab and browse directory to load your `.csv` file.
+- Supported file formats include CSV (preferred), JSON, and HDF5.
 
-### 2. Choose Molecular Embeddings
+### 2. Vectorize Molecules
 
-ChemXploreML supports multiple molecular embeddings:
-
-- **Mol2Vec**: Robust, 300-dimensional embeddings ideal for general-purpose tasks.
-- **VICGAE**: Efficient 32-dimensional embeddings, great for faster processing and large datasets.
+- Go to **VECTORIZE MOLECULES** tab.
+- Select the molecular embedding model you want to use.
+- Click on **Compute** button to start the vectorization process.
+- The vectorized molecules will be saved in the **/embedded_vectors/<embedder_name>.npy** file.
 
 ### 3. Train Your Machine Learning Model
 
-- Select the desired machine learning algorithm (Gradient Boosting, XGBoost, CatBoost, or LightGBM).
-- Configure model parameters or use automatic hyperparameter tuning powered by **Optuna**.
+- Go to **ML Training** tab.
+- Select **ML Model** from the sidebar.
+- (Optional) In Control Panel, configure, `CV, Data split, scaling, cleaning, etc.`
+- Select the machine learning model you want to use.
+- Click on **Begin training** button to start the training process.
+- The trained model will be saved as `<model_name>_<embedder_name>_embeddings_pretrained_model_<mode>.pkl` in the `/pretrained_models/<model_name>/<embedder_name>_embeddings/<mode>/` directory.
+- The model performance plots will be saved in the `/pretrained_models/<model_name>/<embedder_name>_embeddings/<mode>/figures/` directory.
 
-### 4. Analyze and Visualize Results
+### 4. Predict Molecular Properties
 
-- Execute your model and instantly see key performance metrics (R², RMSE, MAE).
-- Use built-in visualization tools to explore:
-  - UMAP projections
-  - Clustering and structural relationships
-  - Performance plots (e.g., predicted vs. actual values)
+- In **ML Prediction** tab, select **ML Prediction** from the sidebar.
+- Choose `model -> embedder -> pre-trained model` from the dropdown menu.
+- Enter `smiles` string in the **SMILES** text box.
+- Click on **Compute** button to start the prediction process.
+- The predicted property value will be displayed in the **Predicted value** text box.
 
 ## What's Next?
 
-<!-- - [Detailed User Guides](./user-guides)
-- [Advanced Configuration](./advanced-config)
-- [FAQs](./faqs) -->
+<!-- - Explore the [User Guides](./user-guides) for detailed instructions on using ChemXploreML.
+- Check out the [FAQs](./faqs) for answers to common questions. -->
 
 Enjoy exploring your molecular datasets with ChemXploreML!
