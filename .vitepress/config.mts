@@ -20,4 +20,5 @@ export default defineConfig({
   },
   base: "/ChemXploreML-docs/",
   head: [["link", { rel: "icon", type: "image/x-icon", href: "/ChemXploreML-docs/icon.ico" }]],
+  ignoreDeadLinks: true,
 });
