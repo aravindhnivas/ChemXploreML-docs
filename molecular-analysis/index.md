@@ -9,6 +9,8 @@ description: Tools for exploring and analyzing molecular structures
 
 The Molecular Analysis module provides tools for exploring and analyzing molecular structures. This section covers the fundamental features for molecular visualization and analysis.
 
+![Molecular Analysis](../screenshots/molecular-analysis/cxml-molecular-analysis-overview.png)
+
 ## Features
 
 - Molecular structure visualization
