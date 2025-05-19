@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import { sidebar } from "./sidebar";
+import lightbox from "vitepress-plugin-lightbox";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -21,4 +22,9 @@ export default defineConfig({
   base: "/ChemXploreML-docs/",
   head: [["link", { rel: "icon", type: "image/x-icon", href: "/ChemXploreML-docs/icon.ico" }]],
   ignoreDeadLinks: true,
+  markdown: {
+    config: (md) => {
+      md.use(lightbox, {});
+    },
+  },
 });
