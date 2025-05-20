@@ -1,8 +1,3 @@
----
-title: Molecular Analysis
-description: Tools for exploring and analyzing molecular structures
----
-
 # Molecular Analysis
 
 ## Overview
@@ -16,23 +11,8 @@ The Molecular Analysis module provides tools for exploring and analyzing molecul
 - Molecular structure visualization
 - Chemical property analysis
 - Structural similarity assessment
-- Molecular fingerprinting
-- Substructure search
-
-## Basic Usage
-
-```python
-from chemxploreml import MoleculeAnalyzer
-
-# Initialize analyzer
-analyzer = MoleculeAnalyzer()
-
-# Load a molecule
-molecule = analyzer.load_molecule("CC(=O)OC1=CC=CC=C1C(=O)O")  # Aspirin SMILES
-
-# Get basic properties
-properties = analyzer.get_properties(molecule)
-```
+- Functional group analysis
+- Ring, aromatic, and heteroatom analysis
 
 ## Visualization
 
