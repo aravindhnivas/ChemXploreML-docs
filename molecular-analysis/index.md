@@ -34,14 +34,7 @@ Calculate various molecular properties:
 - Hydrogen bond donors/acceptors
 - Rotatable bonds
 - Aromatic rings
-
-### Similarity Analysis
-
-Compare molecules using different metrics:
-
-- Tanimoto similarity
-- Euclidean distance
-- Cosine similarity
+- Functional groups
 
 ## Next Steps
 
