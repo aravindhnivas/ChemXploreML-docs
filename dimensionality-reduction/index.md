@@ -1,73 +1,97 @@
 # Dimensionality Reduction
 
+The Dimensionality Reduction module in ChemXploreML provides powerful tools for reducing the complexity of molecular data while preserving important structural and property information.
+
 ## Overview
 
-The Dimensionality Reduction module provides various methods to reduce high-dimensional molecular embeddings into lower-dimensional spaces for visualization and analysis.
+![Dimensionality Reduction Overview](/screenshots/dimensionality-reduction/dr_overview.png)
 
-## Available Methods
+The Dimensionality Reduction interface offers:
 
-- [PCA](/dimensionality-reduction/pca)
-- [UMAP](/dimensionality-reduction/umap)
-- [t-SNE](/dimensionality-reduction/t-sne)
-- [KernelPCA](/dimensionality-reduction/kernelpca)
-- [PHATE](/dimensionality-reduction/phate)
-- [ISOMAP](/dimensionality-reduction/isomap)
-- [Laplacian Eigenmaps](/dimensionality-reduction/laplacian-eigenmaps)
-- [TriMap](/dimensionality-reduction/trimap)
-- [Factor Analysis](/dimensionality-reduction/factor-analysis)
+1. **Multiple Algorithms**
+   - Principal Component Analysis (PCA)
+   - t-SNE
+   - UMAP
+   - Other advanced techniques
 
-## Basic Usage
+2. **Visualization Tools**
+   - 2D/3D scatter plots
+   - Interactive visualizations
+   - Cluster highlighting
+   - Property mapping
 
-```python
-from chemxploreml import DimensionalityReducer
+## PCA Implementation
 
-# Initialize reducer
-reducer = DimensionalityReducer(method="pca")
+![PCA Visualization](/screenshots/dimensionality-reduction/dr_pca.png)
 
-# Reduce dimensionality
-reduced_data = reducer.fit_transform(embeddings)
+Principal Component Analysis (PCA) is one of the most commonly used dimensionality reduction techniques in ChemXploreML:
 
-# Visualize results
-reducer.plot(reduced_data, labels=property_values)
-```
+### Features
 
-## Method Selection Guide
+- Automatic component selection
+- Variance explained analysis
+- Component contribution analysis
+- Interactive visualization
 
-### Linear Methods
+### Usage
 
-- PCA: Best for linear relationships
-- Factor Analysis: Good for latent variable discovery
+1. Select PCA from the algorithm options
+2. Configure parameters:
+   - Number of components
+   - Scaling options
+   - Feature selection
+3. Run the analysis
+4. Explore results
 
-### Nonlinear Methods
+## Key Features
 
-- UMAP: Fast and scalable
-- t-SNE: Good for local structure
-- PHATE: Excellent for trajectory data
+### Algorithm Selection
 
-### Graph-based Methods
+- Choose from multiple algorithms
+- Compare different methods
+- Optimize parameters
+- Save configurations
 
-- ISOMAP: Preserves geodesic distances
-- Laplacian Eigenmaps: Good for manifold learning
-
-## Visualization Features
+### Visualization
 
 - Interactive 2D/3D plots
-- Property coloring
+- Property mapping
 - Cluster highlighting
-- Trajectory visualization
 - Export options
 
-## Performance Considerations
+### Analysis Tools
 
-- Memory usage
-- Computation time
-- Scalability
-- GPU acceleration
+- Variance analysis
+- Component contribution
+- Cluster analysis
+- Outlier detection
+
+## Best Practices
+
+1. **Data Preparation**
+   - Standardize features
+   - Handle missing values
+   - Remove outliers
+   - Select relevant features
+
+2. **Algorithm Selection**
+   - Consider data size
+   - Account for computational resources
+   - Match algorithm to goals
+   - Validate results
+
+3. **Parameter Tuning**
+   - Optimize number of components
+   - Adjust algorithm parameters
+   - Validate results
+   - Document settings
 
 ## Next Steps
 
-- Learn about specific methods:
-  - [PCA](/dimensionality-reduction/pca)
-  - [UMAP](/dimensionality-reduction/umap)
-  - [t-SNE](/dimensionality-reduction/t-sne)
-- Explore [Machine Learning Training](/ml-training/model)
+After performing dimensionality reduction, you can:
+
+1. Use the reduced data for [ML Training](/ml-training/)
+2. Generate [Molecular Embeddings](/vectorize-molecules/)
+3. Perform [Molecular Analysis](/molecular-analysis/)
+
+For more detailed information about specific algorithms or visualization options, please refer to the respective documentation sections.

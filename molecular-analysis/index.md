@@ -1,42 +1,95 @@
 # Molecular Analysis
 
+The Molecular Analysis module in ChemXploreML provides comprehensive tools for analyzing and visualizing molecular properties and relationships.
+
 ## Overview
 
-The Molecular Analysis module provides tools for exploring and analyzing molecular structures. This section covers the fundamental features for molecular visualization and analysis.
+![Molecular Analysis Overview](/screenshots/molecular-analysis/cxml-molecular-analysis-overview.png)
 
-![Molecular Analysis](/screenshots/molecular-analysis/cxml-molecular-analysis-overview.png)
+The Molecular Analysis interface provides:
 
-## Features
+1. **Property Analysis**
+   - Molecular weight distribution
+   - LogP analysis
+   - H-bond donor/acceptor patterns
+   - Rotatable bond analysis
+   - Aromatic ring statistics
 
-- Molecular structure visualization
-- Chemical property analysis
-- Structural similarity assessment
-- Functional group analysis
-- Ring, aromatic, and heteroatom analysis
+2. **Structural Analysis**
+   - Substructure patterns
+   - Functional group analysis
+   - Ring system analysis
+   - Stereochemistry assessment
 
-## Visualization
+3. **Similarity Analysis**
+   - Molecular similarity calculations
+   - Cluster analysis
+   - Diversity assessment
+   - Scaffold analysis
 
-ChemXploreML provides interactive visualization tools for molecular structures:
+## Key Features
 
-- 2D structure rendering
-- 3D conformer visualization
-- Property heatmaps
-- Similarity networks
+### Property Analysis
 
-## Analysis Tools
+- Calculate and visualize key molecular properties
+- Generate property distributions
+- Identify property outliers
+- Compare property patterns across datasets
 
-### Property Calculation
+### Structural Analysis
 
-Calculate various molecular properties:
+- Identify common structural motifs
+- Analyze molecular complexity
+- Assess structural diversity
+- Evaluate structural alerts
 
-- Molecular weight
-- LogP
-- Hydrogen bond donors/acceptors
-- Rotatable bonds
-- Aromatic rings
-- Functional groups
+### Similarity Analysis
+
+- Calculate molecular similarity using various metrics
+- Perform cluster analysis
+- Visualize similarity networks
+- Identify representative compounds
+
+## Usage Guidelines
+
+1. **Starting Analysis**
+   - Load your molecular dataset
+   - Select the analysis type
+   - Configure analysis parameters
+   - Run the analysis
+
+2. **Interpreting Results**
+   - Review generated plots and statistics
+   - Export analysis results
+   - Save analysis configurations
+   - Generate reports
+
+## Best Practices
+
+1. **Data Preparation**
+   - Ensure data quality
+   - Standardize molecular representations
+   - Remove duplicates
+   - Validate structures
+
+2. **Analysis Selection**
+   - Choose appropriate analysis type
+   - Consider dataset size
+   - Account for computational resources
+   - Plan for result interpretation
+
+3. **Result Management**
+   - Save analysis configurations
+   - Export results in multiple formats
+   - Document analysis parameters
+   - Track analysis history
 
 ## Next Steps
 
-- Learn about [Data Management](/load-file/)
-- Explore [Molecular Vectorization](/embedd-molecules/)
+After completing molecular analysis, you can:
+
+1. Proceed to [Dimensionality Reduction](/dimensionality-reduction/) for further data processing
+2. Use the results for [ML Training](/ml-training/)
+3. Generate [Molecular Embeddings](/vectorize-molecules/)
+
+For more detailed information about specific analysis types, please refer to the respective documentation sections.
