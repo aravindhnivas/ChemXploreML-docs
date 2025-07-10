@@ -17,6 +17,31 @@ ChemXploreML is available as a downloadable application for macOS (Intel and App
    - On Windows, run the installer (`.exe`) and follow the installation instructions.
    - On Linux, first make the `.AppImage` file executable and then run it.
 
+<!-- macOS Gatekeeper Warning (Important)macOS may prevent launching unsigned apps.  To bypass this:1.  Open Terminal.2.  Run:xattr -c /Applications/ChemXploreML.app3.  Right-click the app and select “Open”.A notarized version will be released in a future update. -->
+
+### macOS Installation
+
+:::warning macOS Gatekeeper Warning
+macOS may prevent launching unsigned apps. To bypass this, run the following command in Terminal.app:
+
+Install the app by dragging the ChemXploreML.app file to the Applications folder.
+
+Then, run the following command in Terminal.app:
+
+```bash
+xattr -c /Applications/ChemXploreML.app
+```
+
+NOTE: This is a temporary workaround and a notarized version will be released in a future update.
+:::
+
+### Linux Installation
+
+1. Download the latest release from the [GitHub releases page](https://github.com/aravindhnivas/ChemXploreML/releases).
+2. Extract the downloaded archive to your preferred location.
+3. Run the ChemXploreML executable:
+   - On Linux, first make the `.AppImage` file executable and then run it.
+
 ```bash
 # On Linux
 chmod +x ChemXploreML-*.AppImage
