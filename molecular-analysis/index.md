@@ -11,21 +11,14 @@ The Molecular Analysis interface provides:
 1. **Property Analysis**
    - Molecular weight distribution
    - LogP analysis
-   - H-bond donor/acceptor patterns
-   - Rotatable bond analysis
    - Aromatic ring statistics
+   - and more...
 
 2. **Structural Analysis**
    - Substructure patterns
    - Functional group analysis
    - Ring system analysis
    - Stereochemistry assessment
-
-3. **Similarity Analysis**
-   - Molecular similarity calculations
-   - Cluster analysis
-   - Diversity assessment
-   - Scaffold analysis
 
 ## Key Features
 

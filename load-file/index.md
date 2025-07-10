@@ -26,7 +26,7 @@ Once a file is selected:
 
 ## Analysis Results
 
-After loading, the application provides comprehensive analysis of your molecular data:
+After loading, the application provides comprehensive analysis tools for your molecular data:
 
 ### Overview
 

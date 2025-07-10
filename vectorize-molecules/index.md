@@ -12,7 +12,7 @@ The Vectorize Molecules interface offers:
    - Molecular fingerprints
    - Graph-based embeddings
    - Learned representations
-   - Custom descriptors
+   - Custom descriptors (coming soon...)
 
 2. **Configuration Options**
    - Embedding type selection
@@ -37,55 +37,6 @@ The vectorization process includes:
    - Graph representation
    - Feature vector creation
    - Quality checks
-
-## Key Features
-
-### Embedding Methods
-
-- **Molecular Fingerprints**
-  - ECFP (Extended Connectivity Fingerprints)
-  - MACCS keys
-  - Atom pair fingerprints
-  - Topological fingerprints
-
-- **Graph-based Embeddings**
-  - Graph neural networks
-  - Message passing networks
-  - Graph convolutional networks
-  - Custom graph representations
-
-- **Learned Representations**
-  - Pre-trained models
-  - Transfer learning
-  - Fine-tuning options
-  - Custom training
-
-### Configuration Options
-
-- Embedding dimension selection
-- Feature importance analysis
-- Parameter optimization
-- Output format selection
-
-## Best Practices
-
-1. **Method Selection**
-   - Consider data characteristics
-   - Account for downstream tasks
-   - Balance accuracy and speed
-   - Validate results
-
-2. **Parameter Tuning**
-   - Optimize embedding dimensions
-   - Adjust algorithm parameters
-   - Validate performance
-   - Document settings
-
-3. **Quality Control**
-   - Validate embeddings
-   - Check for information loss
-   - Monitor performance
-   - Track changes
 
 ## Next Steps
 
