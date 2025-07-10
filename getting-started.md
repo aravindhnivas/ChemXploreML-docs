@@ -2,6 +2,10 @@
 
 Welcome to the ChemXploreML documentation! ChemXploreML is a modular desktop application designed to simplify the process of predicting molecular properties using advanced machine learning techniques. This guide will help you quickly set up and start using ChemXploreML.
 
+:::tip Citation
+Marimuthu, A. N. & McGuire, B. A. Machine Learning Pipeline for Molecular Property Prediction Using ChemXploreML. J. Chem. Inf. Model. 65, 5424–5437 (2025). [DOI: 10.1021/acs.jcim.5c00516](https://pubs.acs.org/doi/10.1021/acs.jcim.5c00516)
+:::
+
 ## Download and Installation
 
 ChemXploreML is available as a downloadable application for macOS (Intel and Apple Silicon), Windows (64-bit) and Linux (64-bit, .deb, .rpm and .AppImage):
