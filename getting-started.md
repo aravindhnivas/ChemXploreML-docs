@@ -8,88 +8,70 @@ Marimuthu, A. N. & McGuire, B. A. Machine Learning Pipeline for Molecular Proper
 
 ## Download and Installation
 
-ChemXploreML is available as a downloadable application for macOS (Intel and Apple Silicon), Windows (64-bit) and Linux (64-bit, .deb, .rpm and .AppImage):
+<DownloadLinks />
 
-- [Click here to download latest release of ChemXploreML](https://github.com/aravindhnivas/ChemXploreML/releases)
+For other versions, please visit the [**GitHub releases page**](https://github.com/aravindhnivas/ChemXploreML/releases).
 
 ### Initial Setup
 
-1. Download the latest release from the [GitHub releases page](https://github.com/aravindhnivas/ChemXploreML/releases).
-2. Extract the downloaded archive to your preferred location.
-3. Run the ChemXploreML executable:
-   - On macOS, open the `.dmg` file and drag ChemXploreML into your `Applications` folder.
-   - On Windows, run the installer (`.exe`) and follow the installation instructions.
-   - On Linux, first make the `.AppImage` file executable and then run it.
-
-<!-- macOS Gatekeeper Warning (Important)macOS may prevent launching unsigned apps.  To bypass this:1.  Open Terminal.2.  Run:xattr -c /Applications/ChemXploreML.app3.  Right-click the app and select “Open”.A notarized version will be released in a future update. -->
+1. Download the appropriate installer for your system.
+2. Run the installer:
+   - On **macOS**, open the `.dmg` file and drag the ChemXploreML app into your `Applications` folder.
+   - On **Windows**, run the `.exe` installer and follow the on-screen instructions.
+   - On **Linux**, you can download the `.AppImage`, `.deb`, or `.rpm` file from the releases page.
 
 ### macOS Installation
 
 :::warning macOS Gatekeeper Warning
-macOS may prevent launching unsigned apps. To bypass this, run the following command in Terminal.app:
-
-Install the app by dragging the ChemXploreML.app file to the Applications folder.
-
-Then, run the following command in Terminal.app:
+macOS may prevent launching unsigned apps. To bypass this, after installing the app to your `Applications` folder, run the following command in your terminal:
 
 ```bash
 xattr -c /Applications/ChemXploreML.app
 ```
 
-NOTE: This is a temporary workaround and a notarized version will be released in a future update.
+This is a temporary workaround. A notarized version will be released in a future update.
 :::
 
 ### Linux Installation
 
-1. Download the latest release from the [GitHub releases page](https://github.com/aravindhnivas/ChemXploreML/releases).
-2. Extract the downloaded archive to your preferred location.
-3. Run the ChemXploreML executable:
-   - On Linux, first make the `.AppImage` file executable and then run it.
+To run the AppImage on Linux, first make it executable:
 
 ```bash
-# On Linux
 chmod +x ChemXploreML-*.AppImage
 ./ChemXploreML-*.AppImage
 ```
 
 ## Quick Start Guide
 
-ChemXploreML provides an intuitive user interface for data preparation, molecular embedding, and machine learning model training. Follow these steps to get started:
+Follow these steps to train your first model with ChemXploreML:
 
 ### 1. Load Your Data
 
 - Launch ChemXploreML.
-- Go to **LOAD FILE** tab and browse directory to load your `.csv` file.
-- Supported file formats include CSV (preferred), JSON, and HDF5.
+- Navigate to the **Load File** tab and use the file browser to load your dataset (e.g., a `.csv` file).
+- Configure the **Column X** (SMILES) and **Column Y** (target property) fields.
 
-### 2. Vectorize Molecules
+### 2. Generate Molecular Embeddings
 
-- Go to **VECTORIZE MOLECULES** tab.
-- Select the molecular embedding model you want to use.
-- Click on **Compute** button to start the vectorization process.
-- The vectorized molecules will be saved in the **/embedded_vectors/<embedder_name>.npy** file.
+- Go to the **Embed Molecule** tab.
+- Select an embedding model (e.g., `mol2vec`).
+- Click the **Run** button to generate the embeddings for your dataset. The embeddings will be saved as a `.npy` file.
 
 ### 3. Train Your Machine Learning Model
 
-- Go to **ML Training** tab.
-- Select **ML Model** from the sidebar.
-- (Optional) In Control Panel, configure, `CV, Data split, scaling, cleaning, etc.`
-- Select the machine learning model you want to use.
-- Click on **Begin training** button to start the training process.
-- The trained model will be saved as `<model_name>_<embedder_name>_embeddings_pretrained_model_<mode>.pkl` in the `/pretrained_models/<model_name>/<embedder_name>_embeddings/<mode>/` directory.
-- The model performance plots will be saved in the `/pretrained_models/<model_name>/<embedder_name>_embeddings/<mode>/figures/` directory.
+- Navigate to the **ML Training** tab.
+- In the **Model Panel**, select a machine learning algorithm (e.g., Random Forest).
+- In the **Save Model Panel**, specify a name for your trained model.
+- Click **Begin training**.
+- Once training is complete, you can view the results in the **Results Panel**.
 
 ### 4. Predict Molecular Properties
 
-- In **ML Prediction** tab, select **ML Prediction** from the sidebar.
-- Choose `model -> embedder -> pre-trained model` from the dropdown menu.
-- Enter `smiles` string in the **SMILES** text box.
-- Click on **Compute** button to start the prediction process.
-- The predicted property value will be displayed in the **Predicted value** text box.
+- Go to the **ML Prediction** tab.
+- Load your trained model (`.pkl` file).
+- Provide a file with new molecules to predict.
+- Run the prediction to get the results.
 
 ## What's Next?
 
-<!-- - Explore the [User Guides](./user-guides) for detailed instructions on using ChemXploreML.
-- Check out the [FAQs](./faqs) for answers to common questions. -->
-
-Enjoy exploring your molecular datasets with ChemXploreML!
+Enjoy exploring your molecular datasets with ChemXploreML! For more detailed information, please refer to the other sections of this documentation.
