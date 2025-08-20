@@ -23,6 +23,19 @@
             </a>
           </td>
         </tr>
+
+        <tr>
+          <td>macOS (Intel - x64)</td>
+          <td>
+            <a 
+              :href="`https://github.com/aravindhnivas/ChemXploreML/releases/latest/download/ChemXploreML_${latestVersion}_x64.dmg`"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download
+            </a>
+          </td>
+        </tr>
         <tr>
           <td>macOS (Universal - Intel and Apple Silicon)</td>
           <td>
