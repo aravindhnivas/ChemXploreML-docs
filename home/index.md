@@ -1,35 +1,19 @@
-# Home Interface
+# Home
 
-The home interface is the main entry point of the ChemXploreML application. It provides access to all major features and functionalities of the application.
+Welcome to ChemXploreML, a versatile desktop application designed for implementing machine learning techniques in chemistry. This tool simplifies the process of molecular property prediction, offering a comprehensive suite of features for data preprocessing, analysis, and model training.
 
 ![Home Interface](/screenshots/home/cxml-home.png)
 
-## Overview
+## Main Interface
 
-The home interface is designed to be intuitive and user-friendly, allowing you to:
+The main interface serves as the central hub for all application functionalities, providing easy access to:
 
-- Load molecular data files
-- Access molecular analysis tools
-- Perform dimensionality reduction
-- Train machine learning models
-- Configure application settings
-
-## Navigation
-
-The interface is organized into several key sections:
-
-1. **File Operations**: Located at the top of the interface, allowing you to load and save molecular data files
-2. **Analysis Tools**: Provides access to various molecular analysis features
-3. **ML Features**: Contains tools for dimensionality reduction and machine learning model training
-4. **Settings**: Access to application configuration and preferences
+- **File Loading**: Import molecular data in various formats.
+- **Molecular Analysis**: Analyze and visualize chemical structures.
+- **Embedding Generation**: Create molecular embeddings using advanced models.
+- **Dimensionality Reduction**: Reduce data complexity for better visualization and analysis.
+- **Machine Learning**: Train, optimize, and evaluate predictive models.
 
 ## Getting Started
 
-To begin using ChemXploreML:
-
-1. Start by loading your molecular data file using the file operations section
-2. Choose the appropriate analysis or ML tool based on your needs
-3. Configure any necessary parameters in the settings section
-4. Execute your desired operations
-
-For detailed information about each feature, please refer to their respective documentation sections.
+To begin exploring the capabilities of ChemXploreML, click the **Get Started** button. This will guide you through the initial steps of loading your data and accessing the analysis tools. For more detailed instructions on each feature, refer to the corresponding sections of this documentation.

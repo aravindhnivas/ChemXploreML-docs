@@ -1,75 +1,59 @@
-# Loading Files
+# Load and Analyze Data
 
-The file loading feature in ChemXploreML allows you to import molecular data for analysis and processing.
+The "Load File" section in ChemXploreML is the starting point for most workflows. It allows you to import your molecular data, preprocess it, and perform an initial analysis to understand its characteristics. This feature is divided into two main tabs: **Load Data** and **Analyse Data**.
 
-## File Loading Process
+## Load Data Tab
 
-### Step 1: Initial File Selection
+This tab is for loading your dataset and configuring how it should be read and processed.
 
-![Initial File Selection](/screenshots/load-file/cxml-load-file-0.png)
+![File Loading](/screenshots/load-file/cxml-load-file-0.png)
 
-To begin loading a file:
+### 1. File Selection
 
-1. Click on the "Load File" button in the main interface
-2. Navigate to your molecular data file
-3. Select the file and click "Open"
+- **Browse File**: Click this to open a file dialog and select your dataset. The application supports common formats like CSV and SDF.
+- **Use Dask**: Enable this option if you are working with a large dataset that doesn't fit into memory. Dask will process the data in chunks.
 
-### Step 2: File Processing
+### 2. Column Configuration
 
-![File Processing](/screenshots/load-file/cxml-load-file-1.png)
+Once a file is loaded, you need to specify the key columns:
 
-Once a file is selected:
+- **Column X**: Select the column containing the molecular representations, typically SMILES strings.
+- **Column Y**: Select the column containing the target property you want to predict (e.g., bioactivity, solubility).
+- **Index Column**: Specify a column to be used as a unique identifier for each molecule. If you don't have one, you can create it.
 
-1. The application will process the file
-2. A progress indicator will show the loading status
-3. The file contents will be validated
+### 3. Indexing and Saving
 
-## Analysis Results
+- **Make INDEX and save file**: If your dataset lacks a unique index column, you can create one here. This will save a new version of your file with an added index column.
 
-After loading, the application provides comprehensive analysis tools for your molecular data:
+### 4. State Management
 
-### Overview
+- **Save State**: Saves the current configuration (file path, column selections, etc.) to a JSON file. This is useful for saving your work and ensuring reproducibility.
+- **Load State**: Loads a previously saved configuration file.
+
+## Analyse Data Tab
+
+After configuring your dataset in the "Load Data" tab, switch to the "Analyse Data" tab to perform a detailed analysis.
 
 ![Analysis Overview](/screenshots/load-file/cxml-load-file-analysis.png)
 
-The analysis view shows:
+### 1. Duplicate Removal
 
-- Basic molecular properties
-- Data statistics
-- Available features for further analysis
+- **Remove duplicates on X column**: This function checks for and removes any duplicate entries based on the SMILES column (Column X). It will create a new, deduplicated file for you to use in subsequent steps.
 
-### Detailed Plots
+### 2. Data Visualization and Filtering
 
-The application generates various plots to help visualize your data:
+The application generates a series of plots to help you visualize the distribution of various molecular properties in your dataset.
 
-![Analysis Plot 1](/screenshots/load-file/cxml-load-file-analysis-plots-0.png)
-![Analysis Plot 2](/screenshots/load-file/cxml-load-file-analysis-plots-1.png)
-![Analysis Plot 3](/screenshots/load-file/cxml-load-file-analysis-plots-2.png)
-![Analysis Plot 4](/screenshots/load-file/cxml-load-file-analysis-plots-3.png)
+![Analysis Plots](/screenshots/load-file/cxml-load-file-analysis-plots-0.png)
 
-These plots provide insights into:
+For each plot, you can apply filters to select a subset of your data. For example, you can filter molecules based on the number of atoms, the presence of certain elements, or specific structural features.
 
-- Molecular distributions
-- Feature relationships
-- Data patterns
-- Statistical properties
-
-## Supported File Formats
-
-ChemXploreML supports various molecular file formats:
-
-- SDF (Structure Data File)
-- SMILES (Simplified Molecular Input Line Entry System)
-- CSV files with molecular data
-- Other common chemical file formats
+- **Apply Filters**: Once you have defined your filters, you can apply them to create a new, filtered dataset. This is a powerful way to refine your dataset for model training.
 
 ## Next Steps
 
-After loading your file, you can:
+After loading, analyzing, and filtering your data, you are ready to proceed with the core machine learning tasks:
 
-1. Perform molecular analysis
-2. Generate molecular embeddings
-3. Apply dimensionality reduction
-4. Train machine learning models
-
-For more information about these features, please refer to their respective documentation sections.
+- [Generate Molecular Embeddings](/vectorize-molecules/)
+- [Apply Dimensionality Reduction](/dimensionality-reduction/)
+- [Train a Machine Learning Model](/ml-training/)

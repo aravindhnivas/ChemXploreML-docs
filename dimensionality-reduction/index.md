@@ -1,97 +1,165 @@
 # Dimensionality Reduction
 
-The Dimensionality Reduction module in ChemXploreML provides powerful tools for reducing the complexity of molecular data while preserving important structural and property information.
+High-dimensional molecular embeddings, while rich in information, are difficult to visualize and interpret directly. The Dimensionality Reduction module in ChemXploreML provides a suite of powerful algorithms to project these embeddings into a lower-dimensional space (typically 2D or 3D), making it possible to visualize the chemical space, identify clusters, and understand the relationships between molecules.
 
 ## Overview
 
 ![Dimensionality Reduction Overview](/screenshots/dimensionality-reduction/dr_overview.png)
 
-The Dimensionality Reduction interface offers:
+## Workflow
 
-1. **Multiple Algorithms**
-   - Principal Component Analysis (PCA)
-   - t-SNE
-   - UMAP
-   - Other advanced techniques
+The process of applying dimensionality reduction involves the following steps:
 
-2. **Visualization Tools**
-   - 2D/3D scatter plots
-   - Interactive visualizations
-   - Cluster highlighting
-   - Property mapping
+1. **Select Embedder**: Choose the molecular embedding that you want to reduce. These are the embeddings you generated in the "Embed Molecule" section.
+2. **Choose a Method**: Select a dimensionality reduction algorithm from the available tabs. Each method has its own strengths and is suited for different types of analysis.
+3. **Configure Parameters**: Adjust the parameters for the selected algorithm. You can hover over each parameter to get a description of what it does.
+4. **Save Parameters**: Before running the reduction, you must save your parameter configuration. This creates a reusable settings file and ensures your workflow is reproducible.
+5. **Run Reduction**: Click the "Run" button to start the dimensionality reduction process. The application will save the resulting low-dimensional embeddings as a new `.npy` file.
+6. **Visualize**: The reduced embeddings can then be used for visualization and further analysis.
 
-## PCA Implementation
+## Supported Methods
 
-![PCA Visualization](/screenshots/dimensionality-reduction/dr_pca.png)
+Below is a detailed description of each supported dimensionality reduction method and its configurable parameters.
 
-Principal Component Analysis (PCA) is one of the most commonly used dimensionality reduction techniques in ChemXploreML:
+---
 
-### Features
+### PCA (Principal Component Analysis)
 
-- Automatic component selection
-- Variance explained analysis
-- Component contribution analysis
-- Interactive visualization
+- **Description**: A linear technique that transforms the data into a new coordinate system, where the axes (principal components) are orthogonal and capture the maximum variance in the data.
+- **Local Structure**: ⚠️ Moderate
+- **Global Structure**: ✅ Excellent
+- **Scalability**: ✅ Fast
 
-### Usage
+**Parameters**:
 
-1. Select PCA from the algorithm options
-2. Configure parameters:
-   - Number of components
-   - Scaling options
-   - Feature selection
-3. Run the analysis
-4. Explore results
+- `n_components`: The number of principal components to keep. Default: 70.
+- `random_state`: Seed for the random number generator. Default: 42.
 
-## Key Features
+---
 
-### Algorithm Selection
+### UMAP (Uniform Manifold Approximation and Projection)
 
-- Choose from multiple algorithms
-- Compare different methods
-- Optimize parameters
-- Save configurations
+- **Description**: A non-linear technique excellent for preserving both local and some global structure. It is often used for visualizing clusters in high-dimensional data.
+- **Local Structure**: ✅ Excellent
+- **Global Structure**: ⚠️ Moderate
+- **Scalability**: ✅ Fast
 
-### Visualization
+**Parameters**:
 
-- Interactive 2D/3D plots
-- Property mapping
-- Cluster highlighting
-- Export options
+- `n_neighbors`: Controls how UMAP balances local versus global structure. Default: 15.
+- `min_dist`: The minimum distance between embedded points. Default: 0.1.
+- `n_components`: The dimension of the space to embed into. Default: 2.
+- `metric`: The distance metric to use. Default: 'euclidean'.
+- `random_state`: Seed for the random number generator. Default: 42.
 
-### Analysis Tools
+---
 
-- Variance analysis
-- Component contribution
-- Cluster analysis
-- Outlier detection
+### t-SNE (t-Distributed Stochastic Neighbor Embedding)
 
-## Best Practices
+- **Description**: A non-linear technique that is particularly good at revealing the underlying cluster structure in the data. It excels at preserving local structure.
+- **Local Structure**: ✅ Excellent
+- **Global Structure**: ❌ Poor
+- **Scalability**: ❌ Slow
 
-1. **Data Preparation**
-   - Standardize features
-   - Handle missing values
-   - Remove outliers
-   - Select relevant features
+**Parameters**:
 
-2. **Algorithm Selection**
-   - Consider data size
-   - Account for computational resources
-   - Match algorithm to goals
-   - Validate results
+- `n_components`: The dimension of the space to embed into. Default: 2.
+- `perplexity`: Related to the number of nearest neighbors considered for each point. Default: 30.
+- `random_state`: Seed for the random number generator. Default: 42.
 
-3. **Parameter Tuning**
-   - Optimize number of components
-   - Adjust algorithm parameters
-   - Validate results
-   - Document settings
+---
+
+### KernelPCA
+
+- **Description**: An extension of PCA that uses kernel methods to perform non-linear dimensionality reduction.
+- **Local Structure**: ✅ Good
+- **Global Structure**: ✅ Good
+- **Scalability**: ⚠️ Slower
+
+**Parameters**:
+
+- `n_components`: Number of components to keep. Default: 2.
+- `kernel`: The kernel function to use ('linear', 'poly', 'rbf', 'sigmoid', 'cosine'). Default: 'rbf'.
+- `gamma`: Kernel coefficient. Default: null.
+
+---
+
+### PHATE (Potential of Heat-diffusion for Affinity-based Trajectory Embedding)
+
+- **Description**: A visualization method that captures both local and global nonlinear structure using a heat-diffusion-based affinity metric. It is particularly well-suited for visualizing trajectories and progressions in data.
+- **Local Structure**: ✅ Good
+- **Global Structure**: ✅ Excellent
+- **Scalability**: ⚠️ Medium
+
+**Parameters**:
+
+- `n_components`: Number of dimensions to reduce to. Default: 2.
+- `knn`: Number of nearest neighbors. Default: 5.
+- `decay`: Controls the decay of the kernel. Default: 40.
+- `t`: Diffusion time scale. Default: 'auto'.
+- `random_state`: Seed for reproducibility. Default: 42.
+
+---
+
+### ISOMAP
+
+- **Description**: A non-linear technique that preserves the geodesic distances between points on a manifold.
+- **Local Structure**: ✅ Excellent
+- **Global Structure**: ✅ Good
+- **Scalability**: ⚠️ Medium
+
+**Parameters**:
+
+- `n_components`: Number of coordinates for the manifold. Default: 2.
+- `n_neighbors`: Number of neighbors to consider for each point. Default: 5.
+
+---
+
+### Laplacian Eigenmaps
+
+- **Description**: A spectral method that preserves local manifold information by constructing a graph from the data and embedding it in a lower-dimensional space.
+- **Local Structure**: ✅ Excellent
+- **Global Structure**: ❌ Poor
+- **Scalability**: ✅ Fast
+
+**Parameters**:
+
+- `n_components`: Dimension of the embedding space. Default: 2.
+- `n_neighbors`: Number of neighbors for constructing the neighborhood graph. Default: 10.
+
+---
+
+### TriMap
+
+- **Description**: A non-linear method that uses triplet constraints to preserve both local and global structure in the data.
+- **Local Structure**: ✅ Excellent
+- **Global Structure**: ✅ Good
+- **Scalability**: ✅ Fast
+
+**Parameters**:
+
+- `n_dims`: Output dimensionality. Default: 2.
+- `n_inliers`: Number of inlier points per triplet. Default: 10.
+- `n_outliers`: Number of outlier points per triplet. Default: 5.
+- `n_random`: Number of random triplets per point. Default: 5.
+- `distance`: The distance metric to use. Default: 'euclidean'.
+
+---
+
+### Factor Analysis
+
+- **Description**: A linear statistical method used to describe variability among observed, correlated variables in terms of a potentially lower number of unobserved variables called factors.
+- **Local Structure**: ⚠️ Limited
+- **Global Structure**: ✅ Good
+- **Scalability**: ✅ Fast
+
+**Parameters**:
+
+- `n_components`: Number of latent factors to extract. Default: 2.
 
 ## Next Steps
 
-After performing dimensionality reduction, you can:
+After reducing the dimensionality of your embeddings, you can:
 
-1. Use the reduced data for [ML Training](/ml-training/)
-2. Generate [Molecular Embeddings](/vectorize-molecules/)
-3. Perform [Molecular Analysis](/molecular-analysis/)
-
-For more detailed information about specific algorithms or visualization options, please refer to the respective documentation sections.
+- Use the 2D or 3D embeddings to create scatter plots and visualize your chemical space.
+- Use the reduced-dimension embeddings as features for [training a machine learning model](/ml-training/).

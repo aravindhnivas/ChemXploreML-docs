@@ -1,109 +1,54 @@
 # Settings
 
-The Settings module in ChemXploreML provides comprehensive configuration options to customize the application's behavior and optimize its performance.
+The Settings section provides a range of options to configure the application, manage the backend server, and view system information. The settings are organized into several tabs.
 
-## Overview
+## Configuration
 
-The Settings interface is organized into several key sections:
-
-1. **General Settings**
-   - Application preferences
-   - Display options
-   - Language settings
-   - Theme selection
-
-2. **Performance Settings**
-   - Resource allocation
-   - Processing options
-   - Cache management
-   - GPU settings
-
-## Configuration Options
+This is the main settings tab, where you can configure the Python backend, appearance, and other core settings.
 
 ![Settings Configuration](/screenshots/settings/cxml-settings-configurations.png)
 
-The configuration interface allows you to:
+### Appearance
 
-1. **Application Settings**
-   - Default file locations
-   - Auto-save options
-   - Logging preferences
-   - Update settings
+- **Font Size**: Adjust the global font size of the application.
+- **Colors**: Customize the background and text colors.
 
-2. **Processing Settings**
-   - Batch size configuration
-   - Thread management
-   - Memory allocation
-   - GPU utilization
+### Python Environment
 
-## Update Management
+- **Developer Mode**: This mode is for advanced users and developers. It allows you to specify a custom path to your Python executable and the source code directory for the `cxml_py` package. This is useful for debugging or running custom versions of the backend.
+- **Redis Server**: Enable this if you are using a Redis server to manage background tasks. This is an advanced feature for handling long-running computations.
+- **Python Package**: The UI displays the status of the Python backend, including the Python version and the version of the `cxml_py` package.
+- **Server Control**: This section provides controls to start, stop, and restart the Python backend server. A terminal window below shows the server logs.
+- **Application Directories**: Quick links to open the application's local data, log, and resource directories.
+
+## Update
+
+This tab handles updates for both the ChemXploreML application and its Python assets.
 
 ![Update Settings](/screenshots/settings/cxml-settings-update.png)
 
-The update interface provides:
+- **Check for Updates**: Manually check for new versions of the application.
+- **Update Interval**: Set how frequently the application should automatically check for updates.
+- **Python Assets**: Check for, download, and install updates for the Python backend package and other assets.
 
-1. **Version Control**
-   - Current version info
-   - Update checking
-   - Update installation
-   - Version history
+## Process Monitor
 
-2. **Update Settings**
-   - Auto-update options
-   - Update notifications
-   - Backup settings
-   - Rollback options
+This tab allows you to monitor the connection to the backend server and the Redis message queue (if enabled).
 
-## Key Features
+- **Websocket Connection**: Manually connect or disconnect the websocket that communicates with the Python server.
+- **RQ Dashboard**: Open the Redis Queue (RQ) dashboard in your web browser to monitor the status of background jobs.
 
-### General Settings
+## System
 
-- Theme customization
-- Language selection
-- Display preferences
-- File associations
+This is an informational tab that displays details about your system and the application's components.
 
-### Performance Settings
+- **System**: Your operating system, architecture, RAM, and CPU core count.
+- **Versions**: The versions of ChemXploreML, Tauri, Python, and the `cxml_py` package.
 
-- CPU/GPU configuration
-- Memory management
-- Cache settings
-- Processing options
+## Console
 
-### Security Settings
+This tab displays a log of messages from the application's backend and frontend, which can be useful for debugging.
 
-- Update preferences
-- Backup options
-- Data protection
-- Access control
+## Credit and License
 
-## Best Practices
-
-1. **Configuration Management**
-   - Regular backups
-   - Version control
-   - Change documentation
-   - Testing changes
-
-2. **Performance Optimization**
-   - Resource monitoring
-   - Load balancing
-   - Cache management
-   - Regular maintenance
-
-3. **Update Management**
-   - Regular updates
-   - Version tracking
-   - Backup before updates
-   - Testing after updates
-
-## Next Steps
-
-After configuring your settings, you can:
-
-1. Save and apply changes
-2. Test new configurations
-3. Monitor performance
-4. Update as needed
-
-For more detailed information about specific settings or configuration options, please refer to the respective documentation sections.
+These tabs display information about the developers, acknowledgments, and the software license.

@@ -1,88 +1,73 @@
 # Molecular Analysis
 
-The Molecular Analysis module in ChemXploreML provides comprehensive tools for analyzing and visualizing molecular properties and relationships.
+The Molecular Analysis module in ChemXploreML provides comprehensive tools for analyzing and visualizing molecular properties. By inputting a SMILES string, you can generate a detailed report covering various aspects of the molecule's structure and physicochemical properties.
 
 ## Overview
 
 ![Molecular Analysis Overview](/screenshots/molecular-analysis/cxml-molecular-analysis-overview.png)
 
-The Molecular Analysis interface provides:
-
-1. **Property Analysis**
-   - Molecular weight distribution
-   - LogP analysis
-   - Aromatic ring statistics
-   - and more...
-
-2. **Structural Analysis**
-   - Substructure patterns
-   - Functional group analysis
-   - Ring system analysis
-   - Stereochemistry assessment
+The analysis is organized into several categories, allowing you to focus on specific areas of interest. The following sections detail the properties calculated in each category.
 
 ## Key Features
 
-### Property Analysis
+### Basic Properties
 
-- Calculate and visualize key molecular properties
-- Generate property distributions
-- Identify property outliers
-- Compare property patterns across datasets
+- **Number of Atoms**: Total count of atoms in the molecule.
+- **Number of Bonds**: Total count of bonds in the molecule.
+- **Molecular Weight**: The molecular weight of the molecule.
 
-### Structural Analysis
+### Ring Information
 
-- Identify common structural motifs
-- Analyze molecular complexity
-- Assess structural diversity
-- Evaluate structural alerts
+- **Number of Rings**: Total count of rings.
+- **Ring Sizes**: A list of the sizes of each ring.
 
-### Similarity Analysis
+### Chain Information
 
-- Calculate molecular similarity using various metrics
-- Perform cluster analysis
-- Visualize similarity networks
-- Identify representative compounds
+- **Longest Alkane Chain**: Length of the longest single-bonded carbon chain.
+- **Longest Alkene Chain**: Length of the longest double-bonded carbon chain.
+- **Longest Alkyne Chain**: Length of the longest triple-bonded carbon chain.
+- **Number of Alkane Chains**: Total count of single-bonded carbon chains.
+- **Number of Alkene Chains**: Total count of double-bonded carbon chains.
+- **Number of Alkyne Chains**: Total count of triple-bonded carbon chains.
+
+### Aromaticity
+
+- **Number of Aromatic Rings**: Total count of aromatic rings.
+- **Number of Aromatic Atoms**: Total count of atoms participating in aromatic rings.
+
+### Functional Groups
+
+This section provides counts for various functional groups, including but not limited to:
+
+- Alcohols, Aldehydes, Ketones
+- Carboxylic Acids, Esters, Ethers
+- Amines, Amides, Nitro compounds
+- Nitriles, Sulfides, Sulfoxides, Sulfones, Thiols
+- Alkenes, Alkynes, Halides (Alkyl and Aryl), Phenols
+
+### Physicochemical Properties
+
+- **LogP**: The logarithm of the partition coefficient, a measure of lipophilicity.
+- **TPSA (Topological Polar Surface Area)**: A measure of the polar surface area of the molecule.
+- **Number of Hydrogen Bond Donors (HBD)**
+- **Number of Hydrogen Bond Acceptors (HBA)**
+- **Number of Rotatable Bonds**
+
+### Heterocyclicity
+
+- **Number of Heterocycles**: The number of rings containing at least one non-carbon atom.
+- **Percent of Heteroatoms in Heterocycles**: The percentage of non-carbon atoms within the heterocyclic rings.
 
 ## Usage Guidelines
 
-1. **Starting Analysis**
-   - Load your molecular dataset
-   - Select the analysis type
-   - Configure analysis parameters
-   - Run the analysis
-
-2. **Interpreting Results**
-   - Review generated plots and statistics
-   - Export analysis results
-   - Save analysis configurations
-   - Generate reports
-
-## Best Practices
-
-1. **Data Preparation**
-   - Ensure data quality
-   - Standardize molecular representations
-   - Remove duplicates
-   - Validate structures
-
-2. **Analysis Selection**
-   - Choose appropriate analysis type
-   - Consider dataset size
-   - Account for computational resources
-   - Plan for result interpretation
-
-3. **Result Management**
-   - Save analysis configurations
-   - Export results in multiple formats
-   - Document analysis parameters
-   - Track analysis history
+1. **Input SMILES**: Enter the SMILES string of the molecule you wish to analyze in the input field.
+2. **Run Analysis**: Click the "Analyse" button to perform the calculations.
+3. **View Results**: The calculated properties will be displayed, categorized as listed above. You can use the checkboxes to show or hide different property categories.
 
 ## Next Steps
 
-After completing molecular analysis, you can:
+After analyzing a molecule, you can use this information for various purposes, such as:
 
-1. Proceed to [Dimensionality Reduction](/dimensionality-reduction/) for further data processing
-2. Use the results for [ML Training](/ml-training/)
-3. Generate [Molecular Embeddings](/vectorize-molecules/)
-
-For more detailed information about specific analysis types, please refer to the respective documentation sections.
+- Comparing different molecules.
+- Preparing data for machine learning models.
+- Understanding structure-property relationships.
