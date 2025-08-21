@@ -80,23 +80,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+  import { ref, onMounted } from 'vue'
 
-const latestVersion = ref('4.6.2') // fallback version
+  const latestVersion = ref('4.6.2') // fallback version
 
-onMounted(async () => {
-  try {
-    const response = await fetch('https://api.github.com/repos/aravindhnivas/ChemXploreML/releases/latest')
-    if (response.ok) {
-      const data = await response.json()
-      latestVersion.value = data.tag_name.replace('v', '') // remove 'v' prefix if present
-    //   console.log(latestVersion.value)
+  onMounted(async () => {
+    try {
+      const response = await fetch('https://api.github.com/repos/aravindhnivas/ChemXploreML/releases/latest')
+      if (response.ok) {
+        const data = await response.json()
+        latestVersion.value = data.tag_name.replace('v', '') // remove 'v' prefix if present
+      }
+    } catch (error) {
+      console.warn('Failed to fetch latest version:', error)
+      // Keep the fallback version
     }
-  } catch (error) {
-    console.warn('Failed to fetch latest version:', error)
-    // Keep the fallback version
-  }
-})
+  })
 </script>
 
 <style scoped>
